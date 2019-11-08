@@ -61,9 +61,9 @@ function App() {
   return (
     <div className="App">
      
-      <Accordian click={handleChange} expanded={expanded} title="Accordian Title 1" name="panel1"/>
-      <Accordian click={handleChange} expanded={expanded} title="Accordian Title 2" name="panel2"/>
-      <Accordian click={handleChange} expanded={expanded} title="Accordian Title 3"name="panel3"/>
+      <Accordian click={handleChange} expanded={expanded} title="Quater 1 : Jul 18 - Sep 18" name="panel1"/>
+      <Accordian click={handleChange} expanded={expanded} title="Quater 2 : Oct 18 - Dec 18" name="panel2"/>
+      <Accordian click={handleChange} expanded={expanded} title="Quater 3 : Jan 19 - Mar 19"name="panel3"/>
     </div>
   );
 }
