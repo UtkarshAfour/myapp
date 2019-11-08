@@ -66,7 +66,11 @@ function App() {
         return <Accordian click={handleChange} expanded={expanded} title={"Quater "+(index+1)+" : Jul 18 - Sep 18"} name={"panel" + index} />
         }
         )
-      }  
+
+      } 
+      <Table columns={columns} data ={data} options ={options}>
+
+    </Table>  
     </div>
   );
 }
@@ -75,6 +79,3 @@ export default App;
 
 
 
-//<Table columns={columns} data ={data} options ={options}>
-
-//</Table> 
