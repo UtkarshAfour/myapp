@@ -1,8 +1,19 @@
 import React from 'react';
 import './App.css';
 import Table from './Table/Table';
+import Accordian from './Accordian/Accordian';
+import {useState} from 'react';
 
 function App() {
+
+  const [expanded, setExpanded] = useState('panel1');
+
+  const handleChange = panel  => {
+    setExpanded(panel);
+  };
+
+  console.log(expanded);
+
   const columns = [
     {
      name: "name",
@@ -46,14 +57,21 @@ function App() {
    const options = {
     filterType: 'checkbox',
   };
-  console.log(data);
+  
   return (
     <div className="App">
-      <Table columns={columns} data ={data} options ={options}>
-
-      </Table>  
+     
+      <Accordian click={handleChange} expanded={expanded} title="Accordian Title 1" name="panel1"/>
+      <Accordian click={handleChange} expanded={expanded} title="Accordian Title 2" name="panel2"/>
+      <Accordian click={handleChange} expanded={expanded} title="Accordian Title 3"name="panel3"/>
     </div>
   );
 }
 
 export default App;
+
+
+
+//<Table columns={columns} data ={data} options ={options}>
+
+//</Table> 

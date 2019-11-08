@@ -5,12 +5,12 @@ const Table = (props) => {
     console.log(props.columns);
     return (
         <div>
-            <MUIDataTable>
+           <MUIDataTable
             title={"Employee List"}
             data={props.data}
             columns={props.columns}
             options={props.options}
-            </MUIDataTable>
+            />
         </div>
     )
 };
