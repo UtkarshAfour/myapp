@@ -1,24 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Table from './Table/Table';
 
 function App() {
+  const columns = [
+    {
+     name: "name",
+     label: "Name",
+     options: {
+      filter: true,
+      sort: true,
+     }
+    },
+    {
+     name: "company",
+     label: "Company",
+     options: {
+      filter: true,
+      sort: false,
+     }
+    },
+    {
+     name: "city",
+     label: "City",
+     options: {
+      filter: true,
+      sort: false,
+     }
+    },
+    {
+     name: "state",
+     label: "State",
+     options: {
+      filter: true,
+      sort: false,
+     }
+    },
+   ];
+   const data = [
+    { name: "Joe James", company: "Test Corp", city: "Yonkers", state: "NY" },
+    { name: "John Walsh", company: "Test Corp", city: "Hartford", state: "CT" },
+    { name: "Bob Herm", company: "Test Corp", city: "Tampa", state: "FL" },
+    { name: "James Houston", company: "Test Corp", city: "Dallas", state: "TX" },
+   ];
+   const options = {
+    filterType: 'checkbox',
+  };
+  console.log(data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table columns={columns} data ={data} options ={options}>
+
+      </Table>  
     </div>
   );
 }
