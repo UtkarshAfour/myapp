@@ -57,13 +57,16 @@ function App() {
    const options = {
     filterType: 'checkbox',
   };
+
+  const arr=["one", "two", "three", "four"];
   
   return (
     <div className="App">
-     
-      <Accordian click={handleChange} expanded={expanded} title="Quater 1 : Jul 18 - Sep 18" name="panel1"/>
-      <Accordian click={handleChange} expanded={expanded} title="Quater 2 : Oct 18 - Dec 18" name="panel2"/>
-      <Accordian click={handleChange} expanded={expanded} title="Quater 3 : Jan 19 - Mar 19"name="panel3"/>
+      { arr.map((item, index) => {
+        return <Accordian click={handleChange} expanded={expanded} title={"Quater "+(index+1)+" : Jul 18 - Sep 18"} name={"panel" + index} />
+        }
+        )
+      }  
     </div>
   );
 }

@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
 */
 const Tabset = (props) => {
     const classes = useStyles();
-    const [value, setValue] = useState();
+    const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
       setValue(newValue);
