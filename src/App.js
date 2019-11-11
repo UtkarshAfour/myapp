@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Table from './Table/Table';
 import Accordian from './Accordian/Accordian';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 
 function App() {
 
@@ -12,7 +12,15 @@ function App() {
     setExpanded(panel);
   };
 
-  console.log(expanded);
+  //console.log(expanded);
+
+  
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+  }
+  );
 
   const columns = [
     {
@@ -58,8 +66,8 @@ function App() {
     filterType: 'checkbox',
   };
 
-  const arr=["one", "two", "three", "four"];
-  
+  const arr=["one", "two", "three", "four"]; //Quater count
+
   return (
     <div className="App">
       { arr.map((item, index) => {
